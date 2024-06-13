@@ -1,0 +1,15 @@
+[Unit]
+Description=My Startup Script
+After=network.target
+
+[Service]
+ExecStart=/home/pi/startup.sh
+ExecStart=/bin/bash /home/pi/startup.sh
+WorkingDirectory=/home/pi
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
