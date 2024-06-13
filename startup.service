@@ -1,15 +1,10 @@
 [Unit]
-Description=My Startup Script
-After=network.target
+Description=My Script Service
+After=multi-user.target
 
 [Service]
-ExecStart=/home/pi/startup.sh
-ExecStart=/bin/bash /home/pi/startup.sh
-WorkingDirectory=/home/pi
-StandardOutput=inherit
-StandardError=inherit
-Restart=always
-User=pi
+Type=idle
+ExecStart=/usr/bin/python3 main.py
 
 [Install]
 WantedBy=multi-user.target
